@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { Badge } from "flowbite-react";
 import Image from "next/image";
 import { findAsset, findCategory } from "../helper";
+import getBase64 from "@/utils/getBase64";
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -44,6 +45,8 @@ const BlogDetail = async ({ params }) => {
   const idCategory = blog.items[0].fields.category.sys.id;
   const entries = blog.includes.Entry;
   const category = findCategory(idCategory, entries);
+
+  const base64 = await getBase64(`https:${thumbnail.fields.file.url}`);
 
   function RichTextAsset({ id, assets }) {
     const asset = findAsset(id, assets);
@@ -106,6 +109,8 @@ const BlogDetail = async ({ params }) => {
             src={`https:${thumbnail.fields.file.url}`}
             alt="Thumbnail image"
             className="object-cover"
+            placeholder="blur"
+            blurDataURL={base64}
           />
         </div>
       </section>
