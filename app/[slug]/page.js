@@ -19,7 +19,7 @@ export async function generateMetadata({ params }, parent) {
   );
 
   return {
-    metadataBase: new URL("https://6c3sltkg-3000.asse.devtunnels.ms/"),
+    metadataBase: new URL("https://foodhub-blog-daniel.vercel.app/"),
     title: blog.items[0].fields.title,
     description: blog.items[0].fields.descriptions,
     openGraph: {

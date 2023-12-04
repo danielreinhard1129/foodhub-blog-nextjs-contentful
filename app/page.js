@@ -15,7 +15,7 @@ export default async function Home({ searchParams }) {
       {/* JUMBOTRON */}
       <section className="mt-10 flex h-52 flex-col items-center text-center sm:justify-center md:mt-0 md:h-96">
         <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
-          The FoodHub Blog
+          The FoodHub Blogs
         </h1>
         <p className="mb-8">A blog about food, experiences, and recipes</p>
         <Autocomplete data={entriesAutoComplete.items} />

@@ -14,7 +14,7 @@ export const getEntriesPagination = async (page) => {
       },
     },
   );
-  return await res.json();
+  return res.json();
 };
 
 export const getEntries = async () => {
@@ -27,7 +27,7 @@ export const getEntries = async () => {
       },
     },
   );
-  return await res.json();
+  return res.json();
 };
 
 export const getEntryBySlug = async (slug) => {

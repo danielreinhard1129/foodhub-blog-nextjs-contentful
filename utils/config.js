@@ -1,6 +1,6 @@
 export const appConfig = {
-  baseUrl: "https://cdn.contentful.com",
-  spaceId: "3hklfff8nzhm",
-  accessToken: "_QLY9i9fNx4MinWjHXzt3Ybyzr35fkr8oTyRXkYIwsY",
-  environmentId: "master",
+  baseUrl: process.env.BASE_URL_CONTENTFUL,
+  spaceId: process.env.SPACE_ID_CONTENTFUL,
+  accessToken: process.env.ACCESS_TOKEN_CONTENTFUL,
+  environmentId: process.env.ENVIRONTMENT_ID_CONTENTFUL,
 };
