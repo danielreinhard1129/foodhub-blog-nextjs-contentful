@@ -46,7 +46,7 @@ const BlogDetail = async ({ params }) => {
   const entries = blog.includes.Entry;
   const category = findCategory(idCategory, entries);
 
-  const base64 = await getBase64(`https:${thumbnail.fields.file.url}`);
+  // const base64 = await getBase64(`https:${thumbnail.fields.file.url}`);
 
   function RichTextAsset({ id, assets }) {
     const asset = findAsset(id, assets);
@@ -109,8 +109,8 @@ const BlogDetail = async ({ params }) => {
             src={`https:${thumbnail.fields.file.url}`}
             alt="Thumbnail image"
             className="object-cover"
-            placeholder="blur"
-            blurDataURL={base64}
+            // placeholder="blur"
+            // blurDataURL={base64}
           />
         </div>
       </section>
