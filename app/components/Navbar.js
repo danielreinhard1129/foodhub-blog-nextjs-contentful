@@ -27,7 +27,7 @@ function NavbarComp() {
   }, []);
 
   const navbarStyle = {
-    transition: "background-color 0.3s ease",
+    transition: "background-color 0.6s ease",
     backgroundColor: scrollPosition > 0 ? "gray" : "transparent",
   };
 
