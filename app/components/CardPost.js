@@ -9,7 +9,6 @@ async function CardPost({ data, includes }) {
   const image = findAsset(data.fields.thumbnail.sys.id, includes.Asset);
   const category = findCategory(data.fields.category.sys.id, includes.Entry);
   const date = format(new Date(data.fields.createdAt), "dd MMMM yyyy");
-  const base64 = await getBase64(`https:${image.fields.file.url}`);
 
   return (
     <Link href={`/${data.fields.slug}`}>
@@ -20,8 +19,6 @@ async function CardPost({ data, includes }) {
             src={`https:${image.fields.file.url}`}
             alt="Thumbnail image"
             className="object-cover"
-            placeholder="blur"
-            blurDataURL={base64}
           />
         </div>
         <div className="flex flex-col gap-1">
