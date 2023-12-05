@@ -6,6 +6,7 @@ import { Badge } from "flowbite-react";
 import Image from "next/image";
 import { findAsset, findCategory } from "../helper";
 import { notFound } from "next/navigation";
+import ModalSocialMedia from "../components/ModalSocialMedia";
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -104,7 +105,13 @@ const BlogDetail = async ({ params }) => {
         <h1 className="mb-2 text-5xl font-semibold">
           {blog.items[0].fields.title}
         </h1>
-        <h3 className="mb-4">{date}</h3>
+        <div className="mb-2 flex items-center justify-between">
+          <h3>{date}</h3>
+          <ModalSocialMedia
+            title={blog.items[0].fields.title}
+            url={`https://foodhub-blog-daniel.vercel.app/${params.slug}`}
+          />
+        </div>
         <div className="relative h-[200px] lg:h-[400px]">
           <Image
             fill
