@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { Badge } from "flowbite-react";
 import Image from "next/image";
 import { findAsset, findCategory } from "../helper";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -12,6 +13,10 @@ export async function generateMetadata({ params }, parent) {
 
   // fetch data
   const blog = await getEntryBySlug(slug);
+
+  if (!blog.items.length) {
+    notFound();
+  }
 
   const thumbnail = findAsset(
     blog.items[0].fields.thumbnail.sys.id,
